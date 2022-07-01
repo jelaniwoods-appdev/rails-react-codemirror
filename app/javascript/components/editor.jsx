@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import * as ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom/client'
 
 import { EditorState } from '@codemirror/state';
 import { EditorView, keymap } from '@codemirror/view';
@@ -25,6 +25,6 @@ export const Editor = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const rootEl = document.getElementById('root')
-  ReactDOM.render(<Editor />, rootEl)
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<Editor />);
 })
